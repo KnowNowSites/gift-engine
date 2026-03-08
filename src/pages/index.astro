@@ -1,17 +1,19 @@
 ---
-
+import { guides } from "../data/guides";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<h1>Gift Engine</h1>
+
+<p>Find the perfect gift ideas for every interest.</p>
+
+<h2>Gift Guides</h2>
+
+<ul>
+  {guides.map((guide) => (
+    <li>
+      <a href={`/guides/${guide.slug}`}>
+        {guide.title}
+      </a>
+    </li>
+  ))}
+</ul>
