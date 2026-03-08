@@ -1,0 +1,38 @@
+---
+const {
+  title,
+  description,
+  gifts
+} = Astro.props;
+---
+
+<html>
+<head>
+<title>{title}</title>
+<meta name="description" content={description} />
+</head>
+
+<body>
+
+<h1>{title}</h1>
+
+<p>{description}</p>
+
+<h2>Recommended Gifts</h2>
+
+<ul>
+{gifts.map((gift) => (
+<li>
+<h3>{gift.name}</h3>
+<p>{gift.description}</p>
+
+<a href={gift.link} target="_blank">
+Check price on Amazon
+</a>
+
+</li>
+))}
+</ul>
+
+</body>
+</html>
