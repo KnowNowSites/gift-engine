@@ -1,20 +1,21 @@
 ---
-const {
-  title = "Example Gift Guide",
-  description = "Example description for a gift guide.",
-  gifts = [
-    {
-      name: "Example Product 1",
-      description: "This is an example product.",
-      link: "https://amazon.com"
-    },
-    {
-      name: "Example Product 2",
-      description: "Another example product.",
-      link: "https://amazon.com"
-    }
-  ]
-} = Astro.props;
+const props = Astro.props || {};
+
+const title = props.title || "Example Gift Guide";
+const description = props.description || "Example description for a gift guide.";
+
+const gifts = props.gifts || [
+  {
+    name: "Example Product 1",
+    description: "Example description.",
+    link: "https://amazon.com"
+  },
+  {
+    name: "Example Product 2",
+    description: "Another example description.",
+    link: "https://amazon.com"
+  }
+];
 ---
 
 <html>
