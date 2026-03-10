@@ -101,8 +101,15 @@ gifts: [
 ]
 }
 
+
+
 ,
-{}
-,
-{}
+
+{
+slug: "undefined",
+title: "undefined",
+description: "undefined",
+gifts: undefined
+}
+
 ];
