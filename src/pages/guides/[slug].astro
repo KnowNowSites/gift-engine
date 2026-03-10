@@ -5,15 +5,15 @@ import GiftGuide from "../../components/GiftGuide.astro";
 export async function getStaticPaths() {
   return guides.map((guide) => ({
     params: { slug: guide.slug },
-    props: guide
+    props: { guide }
   }));
 }
 
-const { title, description, gifts } = Astro.props;
+const { guide } = Astro.props;
 ---
 
 <GiftGuide
-  title={title}
-  description={description}
-  gifts={gifts}
+  title={guide.title}
+  description={guide.description}
+  gifts={guide.gifts}
 />
