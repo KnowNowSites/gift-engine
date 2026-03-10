@@ -3,10 +3,12 @@ import { guides } from "../../data/guides";
 import GiftGuide from "../../components/GiftGuide.astro";
 
 export async function getStaticPaths() {
-  return guides.map((guide) => ({
-    params: { slug: guide.slug },
-    props: { guide }
-  }));
+  return guides
+    .filter((guide) => guide && guide.slug)   // ignore broken entries
+    .map((guide) => ({
+      params: { slug: guide.slug },
+      props: { guide }
+    }));
 }
 
 const { guide } = Astro.props;
