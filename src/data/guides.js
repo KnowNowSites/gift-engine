@@ -100,19 +100,4 @@ gifts: [
 { name: "Cast Iron Skillet", description: "Versatile cooking pan.", link: "https://amazon.com" }
 ]
 }
-
-,
-{}
-,
-{}
-,
-{}
-,
-{}
-,
-{}
-,
-{}
-,
-{}
 ];
