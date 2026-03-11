@@ -112,28 +112,4 @@ gifts: [
 ]
 }
 
-,
-
-{
-slug: "gifts-for-photographers",
-title: "Best Gifts for Photographers",
-description: "Perfect gift ideas for photography enthusiasts",
-gifts: [
- { "name": "Camera Tripod", "description": "Stable tripod for sharp photos", "link": "https://amazon.com" },
- { "name": "Lens Cleaning Kit", "description": "Keep camera lenses spotless", "link": "https://amazon.com" }
-]
-}
-
-,
-
-{
-slug: "gifts-for-photographers",
-title: "Best Gifts for Photographers",
-description: "Perfect gift ideas for photography enthusiasts",
-gifts: [
- { "name": "Camera Tripod", "description": "Stable tripod for sharp photos", "link": "https://amazon.com" },
- { "name": "Lens Cleaning Kit", "description": "Keep camera lenses spotless", "link": "https://amazon.com" }
-]
-}
-
 ];
