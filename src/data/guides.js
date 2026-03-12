@@ -290,5 +290,11 @@ export const guides = [
         "link": "https://amazon.com"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-birdwatchers",
+    "title": "Best Gifts for Birdwatchers",
+    "description": "Perfect gift ideas for birdwatchers.",
+    "gifts": []
   }
 ];
