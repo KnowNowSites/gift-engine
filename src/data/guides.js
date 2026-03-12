@@ -296,5 +296,52 @@ export const guides = [
     "title": "Best Gifts for Birdwatchers",
     "description": "Perfect gift ideas for birdwatchers.",
     "gifts": []
+  },
+  {
+    "slug": "gifts-for-cyclists",
+    "title": "Best Gifts for Cyclists",
+    "description": "Perfect gift ideas for cyclists.",
+    "gifts": [
+      {
+        "name": "Bike Multi-Tool",
+        "description": "Compact tool for quick repairs.",
+        "link": "https://amazon.com/bike-multi-tool"
+      },
+      {
+        "name": "Cycling Jersey",
+        "description": "Breathable fabric for long rides.",
+        "link": "https://amazon.com/cycling-jersey"
+      },
+      {
+        "name": "Bike Lights Set",
+        "description": "Bright LED lights for safety.",
+        "link": "https://amazon.com/bike-lights"
+      },
+      {
+        "name": "Water Bottle Cage",
+        "description": "Secure holder for hydration.",
+        "link": "https://amazon.com/bottle-cage"
+      },
+      {
+        "name": "Bike Helmet",
+        "description": "Lightweight and protective design.",
+        "link": "https://amazon.com/bike-helmet"
+      },
+      {
+        "name": "Cycling Gloves",
+        "description": "Padded for comfort and grip.",
+        "link": "https://amazon.com/cycling-gloves"
+      },
+      {
+        "name": "Bike Pump",
+        "description": "Portable for on-the-go inflation.",
+        "link": "https://amazon.com/bike-pump"
+      },
+      {
+        "name": "Bike Lock",
+        "description": "Heavy-duty security for bikes.",
+        "link": "https://amazon.com/bike-lock"
+      }
+    ]
   }
 ];
