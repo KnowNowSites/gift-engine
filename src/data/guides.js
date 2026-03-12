@@ -343,5 +343,52 @@ export const guides = [
         "link": "https://amazon.com/bike-lock"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-beekeepers",
+    "title": "Best Gifts for Beekeepers",
+    "description": "Perfect gift ideas for beekeepers.",
+    "gifts": [
+      {
+        "name": "Beekeeping Starter Kit",
+        "description": "Essential tools for beginners.",
+        "link": "https://amazon.com/beekeeping-starter-kit"
+      },
+      {
+        "name": "Honey Harvesting Kit",
+        "description": "Extract honey with ease.",
+        "link": "https://amazon.com/honey-harvesting-kit"
+      },
+      {
+        "name": "Beekeeping Suit",
+        "description": "Full protection from stings.",
+        "link": "https://amazon.com/beekeeping-suit"
+      },
+      {
+        "name": "Smoker with Fuel",
+        "description": "Calms bees during inspections.",
+        "link": "https://amazon.com/bee-smoker"
+      },
+      {
+        "name": "Hive Tool",
+        "description": "Pries apart hive components.",
+        "link": "https://amazon.com/hive-tool"
+      },
+      {
+        "name": "Bee Brush",
+        "description": "Gently moves bees away.",
+        "link": "https://amazon.com/bee-brush"
+      },
+      {
+        "name": "Honey Jars with Lids",
+        "description": "Store honey in style.",
+        "link": "https://amazon.com/honey-jars"
+      },
+      {
+        "name": "Beekeeping Gloves",
+        "description": "Protects hands from stings.",
+        "link": "https://amazon.com/beekeeping-gloves"
+      }
+    ]
   }
 ];
