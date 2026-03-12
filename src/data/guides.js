@@ -243,5 +243,52 @@ export const guides = [
     "title": "Best Gifts for Model Train Collectors",
     "description": "Perfect gift ideas for model train collectors.",
     "gifts": []
+  },
+  {
+    "slug": "gifts-for-calligraphy-enthusiasts",
+    "title": "Best Gifts for Calligraphy Enthusiasts",
+    "description": "Perfect gift ideas for calligraphy enthusiasts.",
+    "gifts": [
+      {
+        "name": "Premium Calligraphy Pen Set",
+        "description": "Professional nibs and ink for beautiful lettering",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Calligraphy Practice Workbook",
+        "description": "Step-by-step guides for modern lettering techniques",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Luxury Ink Bottles Set",
+        "description": "High-quality pigmented inks in elegant containers",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Bamboo Calligraphy Brush Pens",
+        "description": "Flexible brush tips for fluid artistic writing",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Calligraphy Starter Kit",
+        "description": "Complete beginner set with tools and instructions",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Illuminated Lettering Templates",
+        "description": "Historical font patterns for decorative manuscript work",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Handcrafted Leather Portfolio",
+        "description": "Premium case for storing calligraphy tools safely",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Gold Leaf Application Kit",
+        "description": "Essential tools for adding metallic accents to letters",
+        "link": "https://amazon.com"
+      }
+    ]
   }
 ];
