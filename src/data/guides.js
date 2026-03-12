@@ -396,5 +396,52 @@ export const guides = [
     "title": "Best Gifts for Amateur Astronomers",
     "description": "Perfect gift ideas for amateur astronomers.",
     "gifts": []
+  },
+  {
+    "slug": "gifts-for-**bookbinders**",
+    "title": "Best Gifts for **Bookbinders**",
+    "description": "Perfect gift ideas for **bookbinders**.",
+    "gifts": [
+      {
+        "name": "Bone Folder",
+        "description": "Smooth tool for crisp folds.",
+        "link": "https://amazon.com/dp/B000YQJQ1E"
+      },
+      {
+        "name": "Bookbinding Awl",
+        "description": "Precision piercing for stitching.",
+        "link": "https://amazon.com/dp/B0012XJQ0K"
+      },
+      {
+        "name": "Linen Thread",
+        "description": "Durable thread for hand-sewn bindings.",
+        "link": "https://amazon.com/dp/B000YQJQ1W"
+      },
+      {
+        "name": "Japanese Screw Punch",
+        "description": "Adjustable hole punching tool.",
+        "link": "https://amazon.com/dp/B000YQJQ2A"
+      },
+      {
+        "name": "Bookbinding Glue Brush",
+        "description": "Fine-tip brush for precise gluing.",
+        "link": "https://amazon.com/dp/B000YQJQ2C"
+      },
+      {
+        "name": "Bookbinding Press",
+        "description": "Compact press for professional results.",
+        "link": "https://amazon.com/dp/B000YQJQ2E"
+      },
+      {
+        "name": "Decorative Paper Pack",
+        "description": "Vibrant papers for covers.",
+        "link": "https://amazon.com/dp/B000YQJQ2G"
+      },
+      {
+        "name": "Bookbinding Needles",
+        "description": "Sharp needles for sewing signatures.",
+        "link": "https://amazon.com/dp/B000YQJQ2I"
+      }
+    ]
   }
 ];
