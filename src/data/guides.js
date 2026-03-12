@@ -237,5 +237,11 @@ export const guides = [
         "link": "https://amazon.com"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-model-train-collectors",
+    "title": "Best Gifts for Model Train Collectors",
+    "description": "Perfect gift ideas for model train collectors.",
+    "gifts": []
   }
 ];
