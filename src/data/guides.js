@@ -190,5 +190,52 @@ export const guides = [
         "link": "https://amazon.com"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-vinyl-collectors",
+    "title": "Best Gifts for Vinyl Collectors",
+    "description": "Perfect gift ideas for vinyl collectors.",
+    "gifts": [
+      {
+        "name": "Record Cleaning Kit",
+        "description": "Keeps vinyl clean and sounding great.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Vinyl Storage Crate",
+        "description": "Stylish wooden crate for record storage.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Anti-Static Inner Sleeves",
+        "description": "Protects records from static and dust.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Felt Turntable Mat",
+        "description": "Improves sound quality and reduces vibration.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Album Display Frame",
+        "description": "Showcases favorite album artwork on wall.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Record Weight Stabilizer",
+        "description": "Enhances playback stability and sound clarity.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Vinyl Collector Guide",
+        "description": "Essential reference for rare record hunting.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Wooden Headphone Stand",
+        "description": "Organizes headphones next to turntable setup.",
+        "link": "https://amazon.com"
+      }
+    ]
   }
 ];
