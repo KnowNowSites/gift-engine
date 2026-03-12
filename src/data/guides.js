@@ -390,5 +390,11 @@ export const guides = [
         "link": "https://amazon.com/beekeeping-gloves"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-amateur-astronomers",
+    "title": "Best Gifts for Amateur Astronomers",
+    "description": "Perfect gift ideas for amateur astronomers.",
+    "gifts": []
   }
 ];
