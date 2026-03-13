@@ -449,5 +449,11 @@ export const guides = [
     "title": "Best Gifts for Ceramists",
     "description": "Perfect gift ideas for ceramists.",
     "gifts": []
+  },
+  {
+    "slug": "gifts-for-bonsai-growers",
+    "title": "Best Gifts for Bonsai Growers",
+    "description": "Perfect gift ideas for bonsai growers.",
+    "gifts": []
   }
 ];
