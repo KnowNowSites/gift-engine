@@ -461,5 +461,52 @@ export const guides = [
     "title": "Best Gifts for Mechanical Keyboard Enthusiasts",
     "description": "Perfect gift ideas for mechanical keyboard enthusiasts.",
     "gifts": []
+  },
+  {
+    "slug": "gifts-for-backyard-beekeepers",
+    "title": "Best Gifts for Backyard Beekeepers",
+    "description": "Perfect gift ideas for backyard beekeepers.",
+    "gifts": [
+      {
+        "name": "Beekeeping Suit with Veil",
+        "description": "Protective suit for safe hive inspections",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Honey Extractor Machine",
+        "description": "Efficiently extract honey from comb frames",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Beehive Tool Set",
+        "description": "Essential tools for hive maintenance and inspection",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Frame Feeder for Bees",
+        "description": "Winter feeding solution for bee colonies",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Queen Excluder Grid",
+        "description": "Prevents queen bees from entering honey supers",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Bee Brush with Soft Bristles",
+        "description": "Gentle brush for moving bees during inspections",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Hive Stand with Legs",
+        "description": "Elevated stand to protect hives from moisture",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Smoker with Fuel Box",
+        "description": "Calming smoke device for managing bee behavior",
+        "link": "https://amazon.com"
+      }
+    ]
   }
 ];
