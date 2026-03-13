@@ -508,5 +508,52 @@ export const guides = [
         "link": "https://amazon.com"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-bird-watchers",
+    "title": "Best Gifts for Bird Watchers",
+    "description": "Perfect gift ideas for bird watchers.",
+    "gifts": [
+      {
+        "name": "Binoculars for Bird Watching",
+        "description": "High-quality optics for clear bird viewing",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Field Guide to Birds",
+        "description": "Comprehensive bird identification guide book",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Bird Feeder Camera",
+        "description": "Watch birds up close from your home",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Spotting Scope with Tripod",
+        "description": "Professional grade bird watching equipment set",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Bird Song Identification App",
+        "description": "Learn to identify birds by their calls",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Backyard Bird House Kit",
+        "description": "Attract nesting birds to your garden",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Waterproof Bird Watching Journal",
+        "description": "Record your bird sightings and observations",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Bird Photography Blind Tent",
+        "description": "Camouflage shelter for close-up bird photography",
+        "link": "https://amazon.com"
+      }
+    ]
   }
 ];
