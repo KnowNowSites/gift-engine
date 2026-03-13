@@ -443,5 +443,11 @@ export const guides = [
         "link": "https://amazon.com/dp/B000YQJQ2I"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-ceramists",
+    "title": "Best Gifts for Ceramists",
+    "description": "Perfect gift ideas for ceramists.",
+    "gifts": []
   }
 ];
