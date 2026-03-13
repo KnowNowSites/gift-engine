@@ -602,5 +602,52 @@ export const guides = [
         "link": "https://amazon.com"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-amateur-radio-operators",
+    "title": "Best Gifts for Amateur Radio Operators",
+    "description": "Perfect gift ideas for amateur radio operators.",
+    "gifts": [
+      {
+        "name": "Baofeng UV-5R Handheld Radio",
+        "description": "Popular dual-band handheld transceiver for beginners",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Radio Shack ProScan 300 Scanners",
+        "description": "Digital scanner for monitoring local frequencies",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Yaesu FT-4X Quad Antenna",
+        "description": "Compact HF/VHF/UHF antenna system",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "MFJ Enterprises MFJ-941B Antenna Tuner",
+        "description": "Automatic antenna tuner for efficient transmission",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Radioddity GA-510 Programming Cable",
+        "description": "USB programming cable for various radios",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Palstar AT150 Auto Tuner",
+        "description": "Antenna tuner with excellent matching capabilities",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Ameritron AL-100 Amplifier Kit",
+        "description": "Beginner-friendly QRP amplifier kit",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Signal Stick Magnetic Mount Antenna",
+        "description": "Portable magnetic mount for mobile operations",
+        "link": "https://amazon.com"
+      }
+    ]
   }
 ];
