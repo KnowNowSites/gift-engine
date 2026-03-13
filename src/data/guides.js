@@ -555,5 +555,52 @@ export const guides = [
         "link": "https://amazon.com"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-urban-mushroom-foragers",
+    "title": "Best Gifts for Urban Mushroom Foragers",
+    "description": "Perfect gift ideas for urban mushroom foragers.",
+    "gifts": [
+      {
+        "name": "Mushroom Foraging Guidebook",
+        "description": "Comprehensive field guide for identifying edible mushrooms",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Foraging Basket Set",
+        "description": "Durable wicker baskets perfect for collecting wild mushrooms",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Mushroom Identification Cards",
+        "description": "Waterproof laminated cards for quick field reference",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Foraging Knife Set",
+        "description": "Specialized knives for clean mushroom harvesting",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Mushroom Growing Kit",
+        "description": "Urban cultivation kit for growing your own mushrooms",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Field Microscope",
+        "description": "Portable magnifier for detailed mushroom examination",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Foraging Backpack",
+        "description": "Spacious backpack designed for carrying mushroom harvests",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Mushroom Drying Rack",
+        "description": "Dehydrator for preserving urban foraged mushrooms",
+        "link": "https://amazon.com"
+      }
+    ]
   }
 ];
