@@ -455,5 +455,11 @@ export const guides = [
     "title": "Best Gifts for Bonsai Growers",
     "description": "Perfect gift ideas for bonsai growers.",
     "gifts": []
+  },
+  {
+    "slug": "gifts-for-mechanical-keyboard-enthusiasts",
+    "title": "Best Gifts for Mechanical Keyboard Enthusiasts",
+    "description": "Perfect gift ideas for mechanical keyboard enthusiasts.",
+    "gifts": []
   }
 ];
