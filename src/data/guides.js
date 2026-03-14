@@ -649,5 +649,52 @@ export const guides = [
         "link": "https://amazon.com"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-vintage-camera-restorationists",
+    "title": "Best Gifts for Vintage Camera Restorationists",
+    "description": "Perfect gift ideas for vintage camera restorationists.",
+    "gifts": [
+      {
+        "name": "Vintage Camera Repair Manual Collection",
+        "description": "Comprehensive repair guides for classic film cameras and lenses",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Precision Screwdriver Set for Cameras",
+        "description": "Professional-grade tools specifically designed for camera disassembly and repair",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Leather Camera Case with Vintage Style",
+        "description": "Handcrafted leather case for storing restored vintage camera equipment",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Film Camera Light Meter Replacement",
+        "description": "Accurate light meter sensor replacement for classic film cameras",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Vintage Camera Cleaning Kit",
+        "description": "Complete cleaning supplies including brushes, cloths, and solutions for restoration",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Camera Strap with Classic Leather Design",
+        "description": "Genuine leather shoulder strap for vintage camera bodies and accessories",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Magnifying Glass with LED Lighting",
+        "description": "Hands-free magnification lamp perfect for detailed camera restoration work",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Vintage Camera Parts Assortment Box",
+        "description": "Mixed collection of authentic vintage camera screws, springs, and small components",
+        "link": "https://amazon.com"
+      }
+    ]
   }
 ];
