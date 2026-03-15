@@ -696,5 +696,52 @@ export const guides = [
         "link": "https://amazon.com"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-aquascapers",
+    "title": "Best Gifts for Aquascapers",
+    "description": "Perfect gift ideas for aquascapers.",
+    "gifts": [
+      {
+        "name": "CO2 Diffuser",
+        "description": "Efficient CO2 diffusion for healthy plant growth.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Aquascaping Tweezers",
+        "description": "Precision tools for planting and arranging aquatic plants.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "LED Aquarium Light",
+        "description": "High-quality lighting for vibrant aquatic plant health.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Planted Tank Substrate",
+        "description": "Nutrient-rich soil for strong plant root development.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Water Test Kit",
+        "description": "Monitors essential parameters for optimal tank health.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Aquarium Background",
+        "description": "Realistic backdrop enhancing aquascape depth and aesthetics.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Liquid Plant Fertilizer",
+        "description": "Essential nutrients for lush aquatic plant growth.",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Aquatic Plant Scissors",
+        "description": "Sharp trimming tool for precise plant maintenance.",
+        "link": "https://amazon.com"
+      }
+    ]
   }
 ];
