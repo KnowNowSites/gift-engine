@@ -4,7 +4,6 @@ Dads
 Moms
 Book Lovers
 Tech Lovers
-Fitness Lovers
 Travelers
 Pet Lovers
 Home Cooks
@@ -12,13 +11,14 @@ Photographers
 Vinyl Collectors
 Model Train Collectors
 Calligraphy Enthusiasts
-Birdwatchers
 Cyclists
 Beekeepers
 Amateur Astronomers
 Bookbinders
 Ceramists
 Bonsai Growers
+Mechanical Keyboard Enthusiasts
+Bird Watchers
 Urban Mushroom Foragers
 Amateur Radio Operators
 Vintage Camera Restorationists
