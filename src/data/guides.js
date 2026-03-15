@@ -743,5 +743,52 @@ export const guides = [
         "link": "https://amazon.com"
       }
     ]
+  },
+  {
+    "slug": "gifts-for-ant-keepers",
+    "title": "Best Gifts for Ant Keepers",
+    "description": "Perfect gift ideas for ant keepers.",
+    "gifts": [
+      {
+        "name": "Ant Farm Habitat",
+        "description": "Clear plastic ant colony observation tank with lid",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Ant Keeping Starter Kit",
+        "description": "Complete beginner kit with formicarium and tools",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Magnifying Glass Set",
+        "description": "Professional grade magnifier for observing tiny ants",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Ant Food Supply Pack",
+        "description": "Premium honey, sugar water, and protein supplements",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "LED Magnifier Lamp",
+        "description": "Hands-free bright lighting for ant observation",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Ant Collection Vials",
+        "description": "Small clear containers for safe ant transportation",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Humidity Control System",
+        "description": "Automatic misting device for optimal ant environment",
+        "link": "https://amazon.com"
+      },
+      {
+        "name": "Ant Identification Guide Book",
+        "description": "Comprehensive field guide for species recognition",
+        "link": "https://amazon.com"
+      }
+    ]
   }
 ];
