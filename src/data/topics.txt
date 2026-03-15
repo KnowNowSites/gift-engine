@@ -1,24 +1,24 @@
-Gamers
-Coffee Lovers
-Dads
-Moms
-Book Lovers
-Tech Lovers
-Travelers
-Pet Lovers
-Home Cooks
-Photographers
-Vinyl Collectors
-Model Train Collectors
-Calligraphy Enthusiasts
-Cyclists
-Beekeepers
-Amateur Astronomers
-Bookbinders
-Ceramists
-Bonsai Growers
-Mechanical Keyboard Enthusiasts
-Bird Watchers
-Urban Mushroom Foragers
-Amateur Radio Operators
-Vintage Camera Restorationists
+gamers
+coffee lovers
+dads
+moms
+book lovers
+tech lovers
+travelers
+pet lovers
+home cooks
+photographers
+vinyl collectors
+model train collectors
+calligraphy enthusiasts
+cyclists
+beekeepers
+amateur astronomers
+bookbinders
+ceramists
+bonsai growers
+mechanical keyboard enthusiasts
+bird watchers
+urban mushroom foragers
+amateur radio operators
+vintage camera restorationists
