@@ -3,6 +3,7 @@ const props = Astro.props || {};
 
 const title = props.title || "Example Gift Guide";
 const description = props.description || "Example description for a gift guide.";
+const intro = props.intro || "";
 
 const gifts = props.gifts || [
   {
@@ -22,15 +23,23 @@ const gifts = props.gifts || [
 
 <p>{description}</p>
 
+{intro && (
+<section class="guide-intro">
+<p>{intro}</p>
+</section>
+)}
+
 <h2>Recommended Gifts</h2>
 
 <ul>
 {gifts.map((gift) => (
 <li>
+
 <h3>{gift.name}</h3>
+
 <p>{gift.description}</p>
 
-<a href={gift.link} target="_blank">
+<a href={gift.link} target="_blank" rel="nofollow noopener">
 Check price on Amazon
 </a>
 
