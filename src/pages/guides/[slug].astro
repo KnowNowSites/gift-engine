@@ -1,26 +1,50 @@
 ---
 import BlogLayout from '../../layouts/BlogLayout.astro';
 import { getCollection } from 'astro:content';
+import { marked } from 'marked';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
+
   return guides.map((guide) => ({
-    params: { slug: guide.slug },
-    props: { guide },
+    params: {
+      slug: guide.slug
+    }
   }));
 }
 
-const { guide } = Astro.props;
-const { Content } = await guide.render();
+const guides = await getCollection('guides');
+
+const guide = guides.find(
+  (g) => g.slug === Astro.params.slug
+);
+
+if (!guide) {
+  throw new Error(`Guide not found: ${Astro.params.slug}`);
+}
+
+const {
+  title = "Untitled Guide",
+  description = "",
+  image = "",
+  category = "",
+  publishDate = null,
+  updatedDate = null
+} = guide.data ?? {};
+
+// Convert markdown body manually
+const htmlContent = marked.parse(guide.body);
 ---
 
-<BlogLayout 
-  title={guide.data.title}
-  description={guide.data.description}
-  image={guide.data.image}
-  category={guide.data.category}
-  publishDate={guide.data.publishDate}
-  updatedDate={guide.data.updatedDate}
+<BlogLayout
+  title={title}
+  description={description}
+  image={image}
+  category={category}
+  publishDate={publishDate}
+  updatedDate={updatedDate}
 >
-  <Content />
+  <article class="guide-content container">
+    <div set:html={htmlContent}></div>
+  </article>
 </BlogLayout>
