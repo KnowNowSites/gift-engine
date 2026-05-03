@@ -1,0 +1,104 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const { title, description = 'Thoughtful gift recommendations for every emotional situation', image, canonicalURL } = Astro.props;
+const siteTitle = 'Several Gifts';
+const fullTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL || Astro.url} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={image} />}
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL || Astro.url} />
+    <meta property="twitter:title" content={fullTitle} />
+    <meta property="twitter:description" content={description} />
+    {image && <meta property="twitter:image" content={image} />}
+    
+    <!-- Canonical -->
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="/" class="logo">
+              <span class="logo-text">Several Gifts</span>
+            </a>
+            <ul class="nav-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/guides">Gift Guides</a></li>
+              <li><a href="/categories">Categories</a></li>
+              <li><a href="/blog">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Several Gifts</h3>
+            <p>Thoughtful gift recommendations for every emotional situation.</p>
+          </div>
+          <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/guides">Gift Guides</a></li>
+              <li><a href="/categories">Categories</a></li>
+              <li><a href="/blog">Blog</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/disclosure">Affiliate Disclosure</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Several Gifts. All rights reserved.</p>
+          <p>We are a participant in the Amazon Services LLC Associates Program and other affiliate programs.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

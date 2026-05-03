@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allGuides = await getCollection('guides');
+const sortedGuides = allGuides.sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+---
+
+<BaseLayout title="Gift Guides" description="Browse our complete collection of emotional gift recommendations">
+  <section class="guides-page">
+    <div class="container">
+      <h1>Gift Guides</h1>
+      <p class="subtitle">Thoughtful gift recommendations for every emotional situation, relationship, and constraint.</p>
+
+      <div class="guides-list">
+        {sortedGuides.map((guide) => (
+          <article class="guide-item">
+            <div class="guide-info">
+              <span class="guide-category">{guide.data.category}</span>
+              <h2><a href={`/guides/${guide.slug}`}>{guide.data.title}</a></h2>
+              <p>{guide.data.description}</p>
+              <div class="guide-meta">
+                <time datetime={guide.data.publishDate.toISOString()}>
+                  {guide.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+                <a href={`/guides/${guide.slug}`} class="read-more">Read Guide →</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .guides-page {
+    padding: 3rem 0;
+  }
+
+  .guides-page h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2c2416;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .guides-list {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .guide-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid #d4a574;
+    transition: all 0.3s;
+  }
+
+  .guide-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateX(4px);
+  }
+
+  .guide-category {
+    display: inline-block;
+    background-color: #e8d5c4;
+    color: #2c2416;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-item h2 {
+    margin: 0.5rem 0;
+  }
+
+  .guide-item h2 a {
+    color: #2c2416;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .guide-item h2 a:hover {
+    color: #d4a574;
+  }
+
+  .guide-item p {
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .guide-meta {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  .guide-meta time {
+    color: #999;
+  }
+
+  .read-more {
+    color: #d4a574;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .read-more:hover {
+    color: #8b7355;
+  }
+
+  @media (max-width: 768px) {
+    .guides-page {
+      padding: 2rem 0;
+    }
+
+    .guide-item {
+      padding: 1.5rem;
+    }
+
+    .guide-meta {
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+  }
+</style>

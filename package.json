@@ -1,0 +1,27 @@
+{
+  "name": "gift-engine",
+  "version": "1.0.0",
+  "description": "Emotional gift recommendations affiliate website",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": [
+    "gifts",
+    "affiliate",
+    "emotional",
+    "relationships"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "astro": "^5.14.0"
+  },
+  "devDependencies": {
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.0.5"
+  }
+}

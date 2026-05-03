@@ -1,0 +1,287 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allGuides = await getCollection('guides');
+const featuredGuides = allGuides.slice(0, 6);
+---
+
+<BaseLayout title="Gift Engine" description="Thoughtful gift recommendations for every emotional situation">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Find the Perfect Gift</h1>
+        <p>Thoughtful gift recommendations for every emotional situation, relationship, and constraint.</p>
+        <div class="hero-cta">
+          <a href="/guides" class="btn btn-primary">Explore Gift Guides</a>
+          <a href="/categories" class="btn btn-secondary">Browse Categories</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-guides">
+    <div class="container">
+      <h2>Popular Gift Guides</h2>
+      <div class="guides-grid">
+        {featuredGuides.map((guide) => (
+          <article class="guide-card">
+            <div class="guide-header">
+              <span class="guide-category">{guide.data.category}</span>
+            </div>
+            <h3>{guide.data.title}</h3>
+            <p>{guide.data.description}</p>
+            <a href={`/guides/${guide.slug}`} class="read-more">Read Guide →</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="categories-preview">
+    <div class="container">
+      <h2>Gift Categories</h2>
+      <div class="categories-grid">
+        <a href="/categories/relationships" class="category-link">
+          <h3>Relationships</h3>
+          <p>Gifts for partners, spouses, and loved ones</p>
+        </a>
+        <a href="/categories/emotions" class="category-link">
+          <h3>Emotional Situations</h3>
+          <p>Gifts for difficult times and celebrations</p>
+        </a>
+        <a href="/categories/constraints" class="category-link">
+          <h3>Budget & Constraints</h3>
+          <p>Gifts for every price point and situation</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Can't Find What You're Looking For?</h2>
+      <p>Check out our complete collection of gift guides organized by relationship, emotional situation, and budget.</p>
+      <a href="/guides" class="btn btn-primary">View All Guides</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #f9f7f4 0%, #e8d5c4 100%);
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #2c2416;
+  }
+
+  .hero-content p {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    background-color: #d4a574;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #8b7355;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #d4a574;
+    border-color: #d4a574;
+  }
+
+  .btn-secondary:hover {
+    background-color: #d4a574;
+    color: white;
+  }
+
+  .featured-guides {
+    padding: 4rem 0;
+  }
+
+  .featured-guides h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .guide-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .guide-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .guide-header {
+    margin-bottom: 1rem;
+  }
+
+  .guide-category {
+    display: inline-block;
+    background-color: #e8d5c4;
+    color: #2c2416;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .guide-card h3 {
+    margin-bottom: 0.5rem;
+    color: #2c2416;
+  }
+
+  .guide-card p {
+    color: #666;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
+
+  .read-more {
+    color: #d4a574;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .read-more:hover {
+    color: #8b7355;
+  }
+
+  .categories-preview {
+    background-color: white;
+    padding: 4rem 0;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .categories-preview h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .category-link {
+    background: linear-gradient(135deg, #f9f7f4 0%, #e8d5c4 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+  }
+
+  .category-link:hover {
+    border-color: #d4a574;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .category-link h3 {
+    color: #2c2416;
+    margin-bottom: 0.5rem;
+  }
+
+  .category-link p {
+    color: #666;
+    margin: 0;
+  }
+
+  .cta-section {
+    background: linear-gradient(135deg, #2c2416 0%, #8b7355 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+    }
+
+    .hero-cta {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .guides-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .categories-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

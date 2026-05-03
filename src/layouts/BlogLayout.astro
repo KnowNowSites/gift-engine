@@ -1,0 +1,224 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { MarkdownLayoutProps } from 'astro';
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  description: string;
+  image?: string;
+  category: string;
+  author?: string;
+  publishDate: Date;
+  updatedDate?: Date;
+  readingTime?: string;
+}>;
+
+const { frontmatter, file } = Astro.props;
+const { title, description, image, category, author = 'Several Gifts', publishDate, updatedDate, readingTime } = frontmatter;
+
+const canonicalURL = new URL(file, Astro.site);
+---
+
+<BaseLayout title={title} description={description} image={image} canonicalURL={canonicalURL.href}>
+  <article class="article">
+    <div class="container">
+      <div class="article-header">
+        <div class="article-meta">
+          <a href={`/categories/${category.toLowerCase()}`} class="category-tag">{category}</a>
+          <time datetime={publishDate.toISOString()} class="publish-date">
+            {publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+          {readingTime && <span class="reading-time">{readingTime}</span>}
+        </div>
+        <h1 class="article-title">{title}</h1>
+        <p class="article-description">{description}</p>
+        {image && (
+          <img src={image} alt={title} class="article-image" />
+        )}
+      </div>
+
+      <div class="article-body">
+        <slot />
+      </div>
+
+      <div class="article-footer">
+        <div class="article-author">
+          <p><strong>By {author}</strong></p>
+          <p>Last updated: {updatedDate ? updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <style>
+    .article {
+      padding: 3rem 0;
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .category-tag {
+      display: inline-block;
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    .category-tag:hover {
+      background-color: #e0e0e0;
+    }
+
+    .publish-date,
+    .reading-time {
+      font-size: 0.875rem;
+      color: #666;
+    }
+
+    .article-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+    }
+
+    .article-description {
+      font-size: 1.25rem;
+      color: #555;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .article-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .article-body {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    .article-body :global(h2) {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem;
+      color: #1a1a1a;
+    }
+
+    .article-body :global(h3) {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 1.5rem 0 0.75rem;
+      color: #333;
+    }
+
+    .article-body :global(p) {
+      margin-bottom: 1rem;
+    }
+
+    .article-body :global(ul),
+    .article-body :global(ol) {
+      margin: 1rem 0 1rem 2rem;
+    }
+
+    .article-body :global(li) {
+      margin-bottom: 0.5rem;
+    }
+
+    .article-body :global(a) {
+      color: #0066cc;
+      text-decoration: none;
+      border-bottom: 1px solid #0066cc;
+    }
+
+    .article-body :global(a:hover) {
+      color: #0052a3;
+    }
+
+    .article-body :global(blockquote) {
+      border-left: 4px solid #0066cc;
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #555;
+    }
+
+    .article-body :global(code) {
+      background-color: #f5f5f5;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+
+    .article-body :global(pre) {
+      background-color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+
+    .article-footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .article-author {
+      color: #666;
+    }
+
+    .article-author p {
+      margin: 0.25rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 2rem;
+      }
+
+      .article-description {
+        font-size: 1.1rem;
+      }
+
+      .article-body {
+        font-size: 1rem;
+      }
+
+      .article-body :global(h2) {
+        font-size: 1.5rem;
+      }
+
+      .article-body :global(h3) {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</BaseLayout>

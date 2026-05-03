@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allGuides = await getCollection('guides');
+
+// Extract unique categories
+const categories = new Map<string, { name: string; count: number; description: string }>();
+
+const categoryDescriptions: Record<string, string> = {
+  'relationships': 'Gifts for partners, spouses, and loved ones in your life',
+  'emotions': 'Gifts for difficult times, celebrations, and emotional moments',
+  'constraints': 'Gifts for every budget and special situation',
+};
+
+allGuides.forEach((guide) => {
+  const cat = guide.data.category;
+  if (!categories.has(cat)) {
+    categories.set(cat, {
+      name: cat,
+      count: 0,
+      description: categoryDescriptions[cat.toLowerCase()] || `Explore ${cat} gift guides`,
+    });
+  }
+  const catData = categories.get(cat)!;
+  catData.count++;
+});
+
+const sortedCategories = Array.from(categories.values()).sort((a, b) => b.count - a.count);
+---
+
+<BaseLayout title="Gift Categories" description="Browse gift guides by category">
+  <section class="categories-page">
+    <div class="container">
+      <h1>Gift Categories</h1>
+      <p class="subtitle">Find the perfect gift for any situation, relationship, or emotional context.</p>
+
+      <div class="categories-grid">
+        {sortedCategories.map((category) => (
+          <a href={`/categories/${category.name.toLowerCase()}`} class="category-card">
+            <div class="category-header">
+              <h2>{category.name}</h2>
+              <span class="guide-count">{category.count} guides</span>
+            </div>
+            <p>{category.description}</p>
+            <span class="explore-link">Explore →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .categories-page {
+    padding: 3rem 0;
+  }
+
+  .categories-page h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2c2416;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .category-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category-card:hover {
+    border-color: #d4a574;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .category-card h2 {
+    color: #2c2416;
+    margin: 0;
+    flex: 1;
+  }
+
+  .guide-count {
+    background-color: #e8d5c4;
+    color: #2c2416;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 1rem;
+  }
+
+  .category-card p {
+    color: #666;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
+
+  .explore-link {
+    color: #d4a574;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+
+  .category-card:hover .explore-link {
+    color: #8b7355;
+  }
+
+  @media (max-width: 768px) {
+    .categories-page {
+      padding: 2rem 0;
+    }
+
+    .categories-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .category-header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .guide-count {
+      margin-left: 0;
+    }
+  }
+</style>
