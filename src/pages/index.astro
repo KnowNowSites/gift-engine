@@ -2,8 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const allGuides = await getCollection('guides');
-const featuredGuides = allGuides.slice(0, 3);
+let featuredGuides = [];
+
+try {
+  const allGuides = await getCollection('guides');
+
+  featuredGuides = Array.isArray(allGuides)
+    ? allGuides.slice(0, 3)
+    : [];
+} catch (error) {
+  console.error('Failed to load guides collection:', error);
+}
 ---
 
 <BaseLayout
@@ -29,20 +38,28 @@ const featuredGuides = allGuides.slice(0, 3);
     <div class="container">
       <h2>Featured Guides</h2>
 
-      <div class="guides-grid">
-        {
-          featuredGuides.map((guide) => (
-            <div class="guide-card">
-              <h3>{guide.data.title}</h3>
-              <p>{guide.data.description}</p>
+      {
+        featuredGuides.length > 0 ? (
+          <div class="guides-grid">
+            {
+              featuredGuides.map((guide) => (
+                <div class="guide-card">
+                  <h3>{guide.data.title}</h3>
+                  <p>{guide.data.description}</p>
 
-              <a href={`/guides/${guide.slug}`}>
-                Read Guide →
-              </a>
-            </div>
-          ))
-        }
-      </div>
+                  <a href={`/guides/${guide.slug}`}>
+                    Read Guide →
+                  </a>
+                </div>
+              ))
+            }
+          </div>
+        ) : (
+          <div class="empty-guides">
+            <p>No guides available right now.</p>
+          </div>
+        )
+      }
     </div>
   </section>
 </BaseLayout>
@@ -92,5 +109,10 @@ const featuredGuides = allGuides.slice(0, 3);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.empty-guides {
+  text-align: center;
+  padding: 40px;
 }
 </style>

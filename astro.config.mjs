@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://gift-guides.netlify.app/',
+
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/admin'),
@@ -11,7 +12,13 @@ export default defineConfig({
       lastmod: new Date(),
     }),
   ],
+
   output: 'static',
+
+  build: {
+    assets: 'assets'
+  },
+
   vite: {
     ssr: {
       external: ['svgo'],

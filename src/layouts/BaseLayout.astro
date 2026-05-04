@@ -3,18 +3,21 @@ import '../styles/global.css';
 
 const props = Astro.props ?? {};
 
-const title = typeof props.title === "string" ? props.title : "Several Gifts";
+const title = typeof props.title === 'string' ? props.title : 'Several Gifts';
 const description =
-  typeof props.description === "string"
+  typeof props.description === 'string'
     ? props.description
-    : "Thoughtful gift recommendations for every emotional situation";
+    : 'Thoughtful gift recommendations for every emotional situation';
 
-const siteTitle = "Several Gifts";
-const fullTitle =
-  title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
+const image = typeof props.image === 'string' ? props.image : undefined;
+const canonicalURL =
+  typeof props.canonicalURL === 'string' ? props.canonicalURL : undefined;
+
+const siteTitle = 'Several Gifts';
+const fullTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -23,11 +26,17 @@ const fullTitle =
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
 
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+
     <link rel="icon" href="/favicon.svg" />
 
     <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
     />
   </head>
 
