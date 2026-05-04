@@ -1,108 +1,66 @@
-1.Regarding "✅ FIX 2 — FORCE CSS to load in production (VERY IMPORTANT)", I give you my already existing astro.config.mjs conent and you give me the full solution:
-import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
+:root {
+  --color-primary: #d4a574;
+  --color-dark: #2c2416;
+  --color-light: #f9f7f4;
+  --color-text: #333;
+}
 
-export default defineConfig({
-  site: 'https://gift-guides.netlify.app/',
-  integrations: [
-    sitemap({
-      filter: (page) => !page.includes('/admin'),
-      changefreq: 'weekly',
-      priority: 0.7,
-      lastmod: new Date(),
-    }),
-  ],
-  output: 'static',
-  vite: {
-    ssr: {
-      external: ['svgo'],
-    },
-  },
-});
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-2.Regarding "✅ FIX 3 — Force correct asset injection (Netlify-safe)" there are no public/_redirects
-3.Regarding "✅ FIX 4 — Your homepage safety patch (important)", I give you my existing src/pages/index.astro and you give me the full solution:
----
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+body {
+  font-family: Arial, sans-serif;
+  background: white;
+  color: var(--color-text);
+  line-height: 1.6;
+}
 
-const allGuides = await getCollection('guides');
-const featuredGuides = allGuides.slice(0, 3);
----
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
 
-<BaseLayout
-  title="Several Gifts"
-  description="Thoughtful gift recommendations for difficult emotional situations"
->
-  <section class="hero">
-    <div class="container">
-      <h1>Thoughtful Gifts For Real Emotional Situations</h1>
+.header {
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
 
-      <p>
-        Find meaningful gift ideas for relationships, difficult moments,
-        emotional struggles, and life milestones.
-      </p>
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-      <a href="/guides" class="btn-primary">
-        Browse Gift Guides
-      </a>
-    </div>
-  </section>
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--color-dark);
+}
 
-  <section class="featured">
-    <div class="container">
-      <h2>Featured Guides</h2>
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
 
-      <div class="guides-grid">
-        {
-          featuredGuides.map((guide) => (
-            <div class="guide-card">
-              <h3>{guide.data.title}</h3>
-              <p>{guide.data.description}</p>
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
 
-              <a href={`/guides/${guide.slug}`}>
-                Read Guide →
-              </a>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-</BaseLayout>
-
-<style>
 .hero {
   padding: 80px 0;
   text-align: center;
-  background: #f9f7f4;
-}
-
-.hero h1 {
-  color: #2c2416;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  max-width: 700px;
-  margin: 0 auto 30px;
-}
-
-.btn-primary {
-  background: #d4a574;
-  color: white;
-  padding: 14px 28px;
-  border-radius: 8px;
-  display: inline-block;
+  background: var(--color-light);
 }
 
 .featured {
   padding: 60px 0;
-}
-
-.featured h2 {
-  text-align: center;
-  margin-bottom: 40px;
 }
 
 .guides-grid {
@@ -117,4 +75,10 @@ const featuredGuides = allGuides.slice(0, 3);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
-</style>
+
+.footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+}
