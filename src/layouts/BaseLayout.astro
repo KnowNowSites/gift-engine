@@ -1,62 +1,61 @@
 ---
 import '../styles/global.css';
 
-interface Props {
-  title: string;
-  description?: string;
-}
+const props = Astro.props ?? {};
 
-const {
-  title,
-  description = "Thoughtful gift recommendations for every emotional situation"
-} = Astro.props;
+const title = typeof props.title === "string" ? props.title : "Several Gifts";
+const description =
+  typeof props.description === "string"
+    ? props.description
+    : "Thoughtful gift recommendations for every emotional situation";
 
 const siteTitle = "Several Gifts";
-const fullTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
+const fullTitle =
+  title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>{fullTitle}</title>
-  <meta name="description" content={description} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
 
-  <link rel="icon" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.svg" />
 
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
-  />
-</head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    />
+  </head>
 
-<body>
-  <header class="header">
-    <nav class="navbar">
-      <div class="container nav-wrapper">
-        <a href="/" class="logo">
-          <span class="logo-text">Several Gifts</span>
-        </a>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="container nav-wrapper">
+          <a href="/" class="logo">
+            <span class="logo-text">Several Gifts</span>
+          </a>
 
-        <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/guides">Guides</a></li>
-          <li><a href="/categories">Categories</a></li>
-        </ul>
+          <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/categories">Categories</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 Several Gifts</p>
       </div>
-    </nav>
-  </header>
-
-  <main>
-    <slot />
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Several Gifts. All rights reserved.</p>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
