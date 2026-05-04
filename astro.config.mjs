@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://gift-engine.example.com',
+  site: 'https://gift-guides.netlify.app/',
   integrations: [
     sitemap({
       filter: (page) => !page.includes('/admin'),
